@@ -1,0 +1,23 @@
+@use '../variables' as *;
+
+.subscribe {
+  padding: 70px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+
+  }
+
+  &__title {
+    color: $green;
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+}

@@ -1,8 +1,10 @@
 @use 'fonts';
 @use 'base';
 
+@use './layout/form';
 @use './layout/header';
 @use './layout/hero';
 @use './layout/filter';
+@use './layout/subscribe';
 
 @import 'normalize.css';

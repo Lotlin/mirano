@@ -10,43 +10,6 @@
     column-gap: 30px;
   }
 
-  &__form {
-    position: relative;
-    max-width: 420px;
-    width: 100%;
-    height: 40px;
-  }
-
-  &__input {
-    width: 100%;
-    height: 100%;
-    padding: 8px 56px 8px 16px;
-    border-radius: 32px;
-    border: none;
-
-    &::placeholder {
-      color: rgba($color: $dark, $alpha: .3);
-    }
-
-    &::-webkit-search-cancel-button {
-      display: none;
-    }
-  }
-
-  &__search-btn {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $light-orange;
-    border-radius: 32px;
-  }
-
   &__logo {
     justify-self: center;
   }
