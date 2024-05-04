@@ -1,34 +1,37 @@
 @use '../variables' as *;
 
 .filter {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+  }
 
   &__group {
-    max-width: 475px;
-    width: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     column-gap: 12px;
     border: none;
+
+    &--choices {
+      column-gap: 64px;
+    }
   }
 
   &__radio {
     position: absolute;
     appearance: none;
-
-    &:focus + label{
-      background-color: $orange;
-    }
-  
-    &:checked + label {
-      color: $white;
-      background-color:  $light-orange;
-    }
   }
 
   &__label {
-    position: relative;
-    display: inline-block;
-    padding: 24px 16px 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 4px;
+    align-items: center;
+    padding: 16px;
     background-color: $white;
     border: 1px solid transparent;
     border-radius: 300px;
@@ -37,11 +40,7 @@
     color: $dark;
 
     &::before {
-      position: absolute;
       content: '';
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
       width: 40px;
       height: 40px;
     }
@@ -67,5 +66,41 @@
     &:hover {
       background-color: $orange;
     }
+  }
+
+  &__radio:focus-visible + &__label {
+    outline: 2px solid $orange;
+    outline-offset: 5px;
+  }
+
+  &__radio:checked + &__label {
+    color: $white;
+    background-color:  $light-orange;
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    &::after{
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: url('/img/arrow-up.svg') no-repeat center/contain;
+    }
+  }
+
+  &__input-price {
+  }
+
+  &__type-list {
+  }
+
+  &__type-item {
+  }
+
+  &__type-button {
+
   }
 }

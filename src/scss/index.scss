@@ -6,5 +6,10 @@
 @use './layout/hero';
 @use './layout/filter';
 @use './layout/subscribe';
+@use './layout/goods';
+@use './layout/footer';
+
+@use './components/choices';
+@use './components/card';
 
 @import 'normalize.css';
