@@ -1,17 +1,52 @@
-@use '../variables' as *;
+@use '../utils/variables' as *;
+@use '../utils/media' as *;
 
 .header {
   padding: 32px 0;
+
+  @include small {
+    padding: 24px 0;
+  }
 
   &__container {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
+
+    @include medium {
+      grid-template-areas: 
+      ". logo cart-btn"
+      "form form form";
+      row-gap: 32px;
+    }
+
+    @include small {
+      grid-template-areas: 
+      "logo logo cart-btn"
+      "form form form";
+      row-gap: 24px;
+    }
+  }
+
+  &__form {
+    @include medium {
+      grid-area: form;
+    }
   }
 
   &__logo {
+    width: 200px;
     justify-self: center;
+
+    @include medium {
+      grid-area: logo;
+    }
+
+    @include small {
+      width: 140px;
+      justify-self: flex-start;
+    }
   }
 
   &__cart-btn {
@@ -27,5 +62,9 @@
     font-size: 14px;
     line-height: 1.3;
     text-align: center;
+
+    @include medium {
+      grid-area: cart-btn;
+    }
   }
 }

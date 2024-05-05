@@ -1,10 +1,37 @@
-@use '../variables' as *;
+@use '../utils/variables' as *;
+@use '../utils/media' as *;
 
 .form {
   position: relative;
-  max-width: 524px;
+  max-width: 420px;
   width: 100%;
   height: 40px;
+
+  &--large {
+    max-width: 524px;
+  }
+
+  @include large {
+    max-width: 302px;
+
+    &--large {
+      max-width: 524px;
+    }
+  }
+
+  @include medium {
+    max-width: 100%;
+
+    &--large {
+      max-width: 524px;
+    }
+  }
+
+  @include small {
+    &--large {
+      max-width: 100%;;
+    }
+  }
 
   &__input {
     width: 100%;
@@ -12,6 +39,10 @@
     padding: 8px 56px 8px 16px;
     border-radius: 32px;
     border: none;
+
+    @include small {
+      font-size: 14px;
+    }
 
     &::placeholder {
       color: rgba($color: $dark, $alpha: .3);

@@ -1,7 +1,8 @@
-@use 'fonts';
-@use 'base';
+@use 'utils/variables';
 
-@use './layout/form';
+@use 'base/base';
+@use 'base/fonts';
+
 @use './layout/header';
 @use './layout/hero';
 @use './layout/filter';
@@ -9,6 +10,7 @@
 @use './layout/goods';
 @use './layout/footer';
 
+@use './components/form';
 @use './components/choices';
 @use './components/card';
 
