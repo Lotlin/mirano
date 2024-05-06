@@ -28,6 +28,10 @@ body {
   line-height: 1.3;
   color: $dark;
   background-color: $bg;
+
+  @include small {
+    font-size: 14px;
+  }
 }
 
 img,
