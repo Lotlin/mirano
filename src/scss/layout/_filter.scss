@@ -37,14 +37,6 @@
     }
   }
 
-  &__choices-box {
-
-  }
-
-  &__price {
-    
-  }
-
   &__radio {
     position: absolute;
     appearance: none;
@@ -124,16 +116,50 @@
     }
   }
 
-  &__input-price {
+  &__choices-box {
+    @include block-width(276);
+    background-color: $white;
+    border-radius: 12px;
+    padding: 24px;
   }
 
-  &__type-list {
+  &__price {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 8px;
+    border: none;
+  }
+
+  &__input-price {
+    display: inline-block;
+    @include block-width(110);
+    padding: 8px 16px;
+    background: $bg;
+    border-radius: 32px;
+    border: none;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.3;
+      color: $dark;
+    }
   }
 
   &__type-item {
+    margin-bottom: 8px;
+  }
+
+  &__type-item:last-child {
+    margin-bottom: 0;
   }
 
   &__type-button {
-
+    &:hover {
+      color: $orange;
+    }
   }
 }
+

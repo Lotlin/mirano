@@ -1,8 +1,18 @@
+@use '../utils/variables' as *;
+@use '../utils/media' as *;
+
 .choices {
   &__btn {
   }
 
   &__box {
-    display: none;
+    // display: none;
+    
+
+    &--active {
+
+    }
   }
+
+
 }
