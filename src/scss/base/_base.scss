@@ -87,7 +87,7 @@ iframe {
   margin: 0 auto;
 
   @include medium {
-    padding: 0 64px;
+    max-width: 694px;
   }
 
   @include small {
