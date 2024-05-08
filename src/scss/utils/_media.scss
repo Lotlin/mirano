@@ -19,3 +19,9 @@ $small: 520px;
     @content;
   }
 }
+
+@mixin cart-media {
+  @media (max-width: 1360px) {
+    @content;
+  }
+}
