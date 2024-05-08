@@ -1,9 +1,11 @@
 import {
   headerIsScrolled, fixHeaderOnTop, returnHeaderNormalPosition, toggleChoiceBox,
-  adjustElementPositon, hideChoiceBox,
+  adjustElementPositon, hideChoiceBox, toggleCart, hideCart,
 } from './service.js';
 
-import {allChoicesBtns, allChoicesBoxes} from './getElements.js';
+import {
+  allChoicesBtns, allChoicesBoxes, cart, cartOpenBtn, cartCloseBtn,
+} from './getElements.js';
 
 const headerAppearanceControl = () => {
   if (headerIsScrolled()) {
@@ -34,5 +36,22 @@ export const choicesControl = () => {
       }
     });
   });
+};
+
+const closeCartControl = () => {
+  cartCloseBtn.addEventListener('click', () => {
+    hideCart(cart);
+  });
+};
+
+const openCartControl = (elemList) => {
+  cartOpenBtn.addEventListener('click', () => {
+    toggleCart(cart);
+  });
+};
+
+export const cartControl = () => {
+  openCartControl();
+  closeCartControl();
 };
 

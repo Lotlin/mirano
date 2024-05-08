@@ -1,9 +1,10 @@
 import '@/scss/index.scss';
-import {headerControl, choicesControl} from './src/js/conrol.js';
+import {headerControl, choicesControl, cartControl} from './src/js/conrol.js';
 
 const init = () => {
   headerControl();
   choicesControl();
+  cartControl();
 };
 
 

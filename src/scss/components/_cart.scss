@@ -2,7 +2,7 @@
 @use '../utils/media' as *;
 
 .cart {
-  display: block;
+  display: none;
   padding-top: 100px;
 
   &--active {

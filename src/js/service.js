@@ -55,3 +55,11 @@ export const adjustElementPositon = (elem, count = 0) => {
     adjustElementPositon(elem, count);
   }
 };
+
+export const toggleCart = (cart) => {
+  cart.classList.toggle(`cart--active`);
+};
+
+export const hideCart = (cart) => {
+  cart.classList.remove(`cart--active`);
+};
