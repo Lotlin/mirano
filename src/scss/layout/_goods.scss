@@ -8,6 +8,12 @@
     padding: 40px 0 50px;
   }
 
+  &__container {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+  }
+
   &__title {
     margin-bottom: 40px;
     color: $green;

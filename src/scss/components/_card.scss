@@ -56,26 +56,6 @@
     }
   }
 
-  &__delivery {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 4px;  
-    font-size: 14px;
-    
-    @include small {
-      font-size: 12px;
-    }
-
-    &::before {
-      content: '';
-      width: 16px;
-      height: 16px;
-      background: url(/img/delivery.svg) no-repeat center/contain;
-    }
-
-  }
-
   &__button {
     @include block-width(120);
     padding: 8px 16px;

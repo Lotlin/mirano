@@ -1,0 +1,21 @@
+@use '../utils/variables' as *;
+@use '../utils/media' as *;
+
+.delivery {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;  
+  font-size: 14px;
+  
+  @include small {
+    font-size: 12px;
+  }
+
+  &::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: url(/img/delivery.svg) no-repeat center/contain;
+  }
+
+}
