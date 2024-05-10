@@ -1,6 +1,6 @@
-import {headerControl} from './headerControl.js';
-import {choicesControl} from './mainControl/choicesControl.js';
-import {cartControl} from './cartControl.js';
+import {headerControl} from './headerControl';
+import {choicesControl} from './mainControl/choicesControl';
+import {cartControl} from './cartControl';
 
 export const initControl = () => {
   headerControl();

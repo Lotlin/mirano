@@ -1,4 +1,4 @@
-import {body, header} from './getElements.js';
+import {body, header} from './getElements';
 
 const getCurrentHeadHight = () => header.offsetHeight;
 

@@ -1,8 +1,8 @@
 import {
   headerIsScrolled, fixHeaderOnTop, returnHeaderNormalPosition,
-} from '../service.js';
+} from '../service';
 
-import {debounce} from '../debounce.js';
+import {debounce} from '../debounce';
 
 const headerAppearanceControl = () => {
   if (headerIsScrolled()) {

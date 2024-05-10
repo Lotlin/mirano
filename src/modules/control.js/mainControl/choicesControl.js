@@ -1,8 +1,8 @@
 import {
   toggleChoiceBox, adjustElementPositon, hideChoiceBox,
-} from '../../service.js';
+} from '../../service';
 
-import {allChoicesBtns, allChoicesBoxes} from '../../getElements.js';
+import {allChoicesBtns, allChoicesBoxes} from '../../getElements';
 
 export const choicesControl = () => {
   allChoicesBtns.forEach(btn => {
