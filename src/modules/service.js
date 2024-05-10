@@ -58,6 +58,9 @@ export const adjustElementPositon = (elem, count = 0) => {
 
 export const toggleCart = (cart) => {
   cart.classList.toggle(`cart--active`);
+  if (cart.classList.contains('cart--active') && window.innerWidth > 1360) {
+    cart.scrollIntoView({behavior: 'smooth'});
+  }
 };
 
 export const hideCart = (cart) => {
