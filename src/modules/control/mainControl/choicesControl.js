@@ -4,6 +4,7 @@ import {
 } from '../../util';
 import {allChoicesBtns, allChoicesBoxes, typeChoices} from '../../getElements';
 import {store} from '../../Store';
+import { renderCategories } from '../../render/renderCategories.js';
 
 export const choicesControl = () => {
   allChoicesBtns.forEach(btn => {
@@ -39,7 +40,7 @@ export const controlTypeChoicesVisibility = () => {
 
   if (category.size) {
     typeChoices.style.display = '';
-    // toDO обноваить категории
+    renderCategories();
   } else {
     typeChoices.style.display = 'none';
   }

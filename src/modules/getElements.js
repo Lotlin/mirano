@@ -13,3 +13,5 @@ export const cartCloseBtn = cart.querySelector('.cart__close-btn');
 export const goodsList = body.querySelector('.goods__list');
 
 export const filterForm = body.querySelector('.filter__form');
+export const filterCategoryList =
+  filterForm.querySelector('.filter__type-list');

@@ -4,7 +4,7 @@ import {
 } from '../control/mainControl/choicesControl';
 
 
-export const initChioces = () => {
+export const initChoices = () => {
   choicesControl();
 
   store.subscribe(controlTypeChoicesVisibility);
