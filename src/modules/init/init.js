@@ -1,9 +1,9 @@
 import '@/scss/index.scss';
-import {renderProducts} from '../render/renderProducts.js';
+import {renderProducts} from '../render/renderProducts';
 import {initChoices} from './initChoices';
-import {filterProducts} from '../service';
-import {initHeader} from './initHeader.js';
-import {initCart} from './initCart.js';
+import {filterProducts} from '../service/filterProducts';
+import {initHeader} from './initHeader';
+import {initCart} from './initCart';
 
 export const init = () => {
   initHeader();

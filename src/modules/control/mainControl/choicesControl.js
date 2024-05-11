@@ -4,7 +4,7 @@ import {
 } from '../../util';
 import {allChoicesBtns, allChoicesBoxes, typeChoices} from '../../getElements';
 import {store} from '../../Store';
-import { renderCategories } from '../../render/renderCategories.js';
+import {renderCategories} from '../../render/renderCategories.js';
 
 export const choicesControl = () => {
   allChoicesBtns.forEach(btn => {

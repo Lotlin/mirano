@@ -2,6 +2,8 @@ import {goodsList} from '../getElements';
 import {ProductCard} from '../ProductCard';
 import {store} from '../Store';
 
+// todo render Title
+
 export const renderProducts = async () => {
   const updateList = () => {
     const products = store.getProducts();

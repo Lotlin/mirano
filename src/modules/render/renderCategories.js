@@ -2,6 +2,8 @@ import {Category} from '../Category.jsx';
 import {store} from '../Store.js';
 import {filterCategoryList} from '../getElements.js';
 
+// todo render arrow
+
 export const renderCategories = async () => {
   const updateCategoriList = () => {
     const categories = store.getCategories();
