@@ -2,7 +2,7 @@
 @use '../utils/media' as *;
 
 .filter {
-  &__container {
+  &__form {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,7 +70,7 @@
       }
     }
 
-    &--flowers {
+    &--bouquets {
       &::before {
         background: url('/img/flowers.svg') no-repeat center/contain;
       }

@@ -1,7 +1,7 @@
 @use '../utils/variables' as *;
 @use '../utils/media' as *;
 
-.form {
+.search-form {
   position: relative;
   @include block-width(420);
   height: 40px;

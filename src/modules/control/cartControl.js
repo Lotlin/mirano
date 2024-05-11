@@ -1,4 +1,4 @@
-import {toggleCart, hideCart} from '../service';
+import {toggleCart, hideCart} from '../util';
 import {cart, cartOpenBtn, cartCloseBtn} from '../getElements';
 
 const closeCartControl = () => {

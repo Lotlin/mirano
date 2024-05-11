@@ -1,4 +1,4 @@
-import {API_URL} from './API';
+import {API_URL} from './api';
 
 export const ProductCard = (product) => (
   <li class="goods__item card">
@@ -14,7 +14,7 @@ export const ProductCard = (product) => (
       <div class="card__delivery delivery">
         сегодня в&nbsp;14:00
       </div>
-      <button class="card__button">
+      <button class="card__button" type="button">
         <span class="card__price">
           {product.price}&nbsp;₽
         </span>
