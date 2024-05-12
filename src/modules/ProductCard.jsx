@@ -19,7 +19,7 @@ export const ProductCard = (product) => (
           e.target.textContent = 'В корзину';
         }}
         onMouseLeave = {(e) => {
-          e.target.innerHTML = `${productPrice}&nbsp;₽`;
+          e.target.innerHTML = `${product.price}&nbsp;₽`;
         }}>
         {product.price}&nbsp;₽
       </button>
