@@ -1,9 +1,10 @@
 import {
   toggleChoiceBox, adjustElementPositon, hideChoiceBox, isClickOnElem,
-  isChoiseBoxShown,
+  isChoiseBoxShown, filterSelectRotateArrowBg,
+  filterSelectReturnToNormalPosArrowBg,
 } from '@/modules/util';
 import {
-  allChoicesBtns, allChoicesBoxes, typeChoices,
+  allChoicesBtns, allChoicesBoxes, typeChoices, filterButtons,
 } from '@/modules/getElements';
 import {store} from '@/modules/components/Store';
 import {renderCategories} from '@/modules/render/renderCategories';
@@ -16,7 +17,9 @@ export const choicesControl = () => {
       for (let i = 0; i < btnsAmount; i++) {
         const hideNotClickedChoiceBox = ({target}) => {
           if (!isClickOnElem(target, '.choices')) {
+            console.log(target);
             hideChoiceBox(allChoicesBoxes[i]);
+            filterSelectReturnToNormalPosArrowBg(filterButtons[i]);
           }
         };
 
@@ -26,11 +29,14 @@ export const choicesControl = () => {
           if (isChoiseBoxShown(allChoicesBoxes[i])) {
             adjustElementPositon(allChoicesBoxes[i]);
             document.addEventListener('click', hideNotClickedChoiceBox);
+            filterSelectRotateArrowBg(filterButtons[i]);
           } else {
+            filterSelectReturnToNormalPosArrowBg(filterButtons[i]);
             document.removeEventListener('click', hideNotClickedChoiceBox);
           }
         } else {
           hideChoiceBox(allChoicesBoxes[i]);
+          filterSelectReturnToNormalPosArrowBg(filterButtons[i]);
         }
       }
     });

@@ -1,5 +1,16 @@
 import {body, header} from '@/modules/getElements';
 
+export const debounce = (fn, msec = 100) => {
+  let idTimeout;
+
+  return (...args) => {
+    clearInterval(idTimeout);
+    idTimeout = setTimeout(() => {
+      fn(...args);
+    }, msec);
+  };
+};
+
 const getCurrentHeadHight = () => header.offsetHeight;
 
 export const fixHeaderOnTop = () => {
@@ -72,23 +83,23 @@ export const hideCart = (cart) => {
   cart.classList.remove(`cart--active`);
 };
 
-export const debounce = (fn, msec = 100) => {
-  let idTimeout;
-
-  return (...args) => {
-    clearInterval(idTimeout);
-    idTimeout = setTimeout(() => {
-      fn(...args);
-    }, msec);
-  };
-};
-
 export const cleanInputValue = (input) => {
   input.value = '';
 };
 
-export const removeElem = elem => {
+export const removeElem = (elem, parentElem) => {
   elem.style.display = 'none';
   elem.remove();
+
+  if (parentElem.style.position === 'relative') {
+    parentElem.style.position = '';
+  }
 };
 
+export const filterSelectRotateArrowBg = (elem) => {
+  elem.classList.add('filter__select--bg-rotate');
+};
+
+export const filterSelectReturnToNormalPosArrowBg = (elem) => {
+  elem.classList.remove('filter__select--bg-rotate');
+};

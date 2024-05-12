@@ -18,3 +18,4 @@ export const goodsList = goodsSection.querySelector('.goods__list');
 export const filterForm = body.querySelector('.filter__form');
 export const filterCategoryList =
   filterForm.querySelector('.filter__type-list');
+export const filterButtons = filterForm.querySelectorAll('.filter__select');
