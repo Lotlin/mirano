@@ -14,13 +14,14 @@ export const ProductCard = (product) => (
       <div class="card__delivery delivery">
         сегодня в&nbsp;14:00
       </div>
-      <button class="card__button" type="button">
-        <span class="card__price">
-          {product.price}&nbsp;₽
-        </span>
-        <span class="card__to-cart">
-          в&nbsp;корзину
-        </span>
+      <button class="card__button" type="button"
+        onMouseEnter = {(e) => {
+          e.target.textContent = 'В корзину';
+        }}
+        onMouseLeave = {(e) => {
+          e.target.innerHTML = `${productPrice}&nbsp;₽`;
+        }}>
+        {product.price}&nbsp;₽
       </button>
     </div>
   </li>
