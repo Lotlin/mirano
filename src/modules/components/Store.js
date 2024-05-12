@@ -1,10 +1,7 @@
 /* eslint-disable require-jsdoc */
-
 class Store {
   constructor() {
     this.observers = [];
-    this.products = [];
-    this.categories = new Set();
   }
 
   subscribe(observerFunction) {
@@ -13,6 +10,14 @@ class Store {
 
   notifyObservers() {
     this.observers.forEach(observer => observer());
+  }
+}
+
+class ProductStore extends Store {
+  constructor() {
+    super();
+    this.products = [];
+    this.categories = new Set();
   }
 
   getProducts() {
@@ -44,4 +49,4 @@ class Store {
   }
 }
 
-export const store = new Store();
+export const store = new ProductStore();

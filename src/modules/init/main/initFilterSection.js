@@ -1,8 +1,8 @@
-import {store} from '../../Store.js';
+import {store} from '@/modules/components/Store';
 import {
   choicesControl, controlTypeChoicesVisibility,
-} from '../../control/mainControl/choicesControl.js';
-import {filterProducts} from '../../service/filterProducts.js';
+} from '@/modules/control/mainControl/choicesControl';
+import {filterProducts} from '@/modules/service/filterProducts';
 
 
 const initChoices = () => {

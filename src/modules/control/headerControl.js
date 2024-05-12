@@ -1,6 +1,6 @@
 import {
   headerIsScrolled, fixHeaderOnTop, returnHeaderNormalPosition, debounce,
-} from '../util';
+} from '@/modules/util';
 
 const headerAppearanceControl = () => {
   if (headerIsScrolled()) {

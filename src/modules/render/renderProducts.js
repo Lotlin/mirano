@@ -1,6 +1,6 @@
-import {goodsList, goodsTitle} from '../getElements';
-import {ProductCard} from '../ProductCard';
-import {store} from '../Store';
+import {goodsList, goodsTitle} from '@/modules/getElements';
+import {ProductCard} from '@/modules/components/ProductCard';
+import {store} from '@/modules/components/Store';
 
 export const renderProducts = async () => {
   const updateList = () => {
@@ -30,6 +30,6 @@ export const renderProducts = async () => {
   updateList();
 };
 
-export const renderGoosTitle = (title) => {
+export const renderGoodsTitle = (title) => {
   goodsTitle.textContent = title;
 };

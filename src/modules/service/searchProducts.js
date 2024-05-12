@@ -1,6 +1,6 @@
-import {fetchProducts} from '../api.js';
-import {headerForm} from '../getElements.js';
-import {renderGoosTitle} from '../render/renderProducts.js';
+import {fetchProducts} from '@/modules/components/API';
+import {headerForm} from '@/modules/getElements';
+import {renderGoodsTitle} from '@/modules/render/renderProducts';
 
 export const searchProducts = () => {
   headerForm.addEventListener('submit', e => {
@@ -11,7 +11,7 @@ export const searchProducts = () => {
     const searchQuery = formData.get('search').trim();
 
     if (searchQuery) {
-      renderGoosTitle('Результат поиска');
+      renderGoodsTitle('Результат поиска');
       fetchProducts({search: searchQuery});
     }
   });

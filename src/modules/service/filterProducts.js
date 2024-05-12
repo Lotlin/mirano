@@ -1,7 +1,7 @@
-import {fetchProducts} from '../api';
-import {filterForm} from '../getElements';
-import {renderGoosTitle} from '../render/renderProducts.js';
-import {cleanInputValue} from '../util.js';
+import {fetchProducts} from '@/modules/components/API';
+import {filterForm} from '@/modules/getElements';
+import {renderGoodsTitle} from '@/modules/render/renderProducts';
+import {cleanInputValue} from '@/modules/util';
 
 // toDo filter bouquetType
 // toDO fix goodType disappearance
@@ -34,7 +34,7 @@ export const filterProducts = () => {
 
   filterForm.addEventListener('change', ({target}) => {
     if (target.name === 'type') {
-      renderGoosTitle(target.labels[0].textContent);
+      renderGoodsTitle(target.labels[0].textContent);
       cleanInputValue(filterForm.minPrice);
       cleanInputValue(filterForm.maxPrice);
       applyFiltres(filterForm);

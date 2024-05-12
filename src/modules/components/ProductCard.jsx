@@ -1,4 +1,4 @@
-import {API_URL} from './api';
+import {API_URL} from '@/modules/components/API';
 
 export const ProductCard = (product) => (
   <li class="goods__item card">

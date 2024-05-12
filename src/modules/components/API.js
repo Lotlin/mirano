@@ -1,4 +1,4 @@
-import {store} from './Store';
+import {store} from '@/modules/components/Store';
 
 export const API_URL = 'http://localhost:3000';
 const PRODUCTS_URL = 'api/products';

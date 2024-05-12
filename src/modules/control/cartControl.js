@@ -1,5 +1,5 @@
-import {toggleCart, hideCart} from '../util';
-import {cart, cartOpenBtn, cartCloseBtn} from '../getElements';
+import {toggleCart, hideCart} from '@/modules/util';
+import {cart, cartOpenBtn, cartCloseBtn} from '@/modules/getElements';
 
 const closeCartControl = () => {
   cartCloseBtn.addEventListener('click', () => {

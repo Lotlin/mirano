@@ -1,5 +1,5 @@
-import {renderProducts} from '../../render/renderProducts.js';
-import {initFilterSection} from './initFilterSection.js';
+import {renderProducts} from '@/modules/render/renderProducts';
+import {initFilterSection} from '@/modules/init/main/initFilterSection';
 
 export const initMainSection = () => {
   renderProducts();

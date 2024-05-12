@@ -1,6 +1,6 @@
-import {Category} from '../Category.jsx';
-import {store} from '../Store.js';
-import {filterCategoryList} from '../getElements.js';
+import {Category} from '@/modules/components/Category';
+import {store} from '@/modules/components/Store';
+import {filterCategoryList} from '@/modules/getElements';
 
 // todo turn the arrow
 

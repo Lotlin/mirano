@@ -1,10 +1,12 @@
 import {
   toggleChoiceBox, adjustElementPositon, hideChoiceBox, isClickOnElem,
   isChoiseBoxShown,
-} from '../../util';
-import {allChoicesBtns, allChoicesBoxes, typeChoices} from '../../getElements';
-import {store} from '../../Store';
-import {renderCategories} from '../../render/renderCategories.js';
+} from '@/modules/util';
+import {
+  allChoicesBtns, allChoicesBoxes, typeChoices,
+} from '@/modules/getElements';
+import {store} from '@/modules/components/Store';
+import {renderCategories} from '@/modules/render/renderCategories';
 
 export const choicesControl = () => {
   allChoicesBtns.forEach(btn => {
