@@ -6,6 +6,8 @@ export const headerForm = header.querySelector('.header__form');
 export const typeChoices = body.querySelector('.filter__choices--type');
 export const allChoicesBtns = body.querySelectorAll('.choices__btn');
 export const allChoicesBoxes = body.querySelectorAll('.choices__box');
+export const allChoicesButtons = body.querySelectorAll('.choices__btn');
+
 
 export const cart = body.querySelector('.cart');
 export const cartOpenBtn = body.querySelector('.header__cart-btn');
@@ -18,4 +20,3 @@ export const goodsList = goodsSection.querySelector('.goods__list');
 export const filterForm = body.querySelector('.filter__form');
 export const filterCategoryList =
   filterForm.querySelector('.filter__type-list');
-export const filterButtons = filterForm.querySelectorAll('.filter__select');

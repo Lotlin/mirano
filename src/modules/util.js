@@ -37,7 +37,7 @@ export const hideChoiceBox = (box) => {
   box.classList.remove('choices__box--active');
 };
 
-export const isClickOnElem = (target, elemClass) => target.closest(elemClass);
+export const isClickOnThisChoicesBox = (target) => target.closest('.choices');
 
 export const isChoiseBoxShown = (choiceBox) =>
   choiceBox.classList.contains('choices__box--active');
@@ -96,10 +96,10 @@ export const removeElem = (elem, parentElem) => {
   }
 };
 
-export const filterSelectRotateArrowBg = (elem) => {
+export const choiceBtnRotateArrowBg = (elem) => {
   elem.classList.add('filter__select--bg-rotate');
 };
 
-export const filterSelectReturnToNormalPosArrowBg = (elem) => {
+export const choiceBtnReturnToNormalPosArrowBg = (elem) => {
   elem.classList.remove('filter__select--bg-rotate');
 };

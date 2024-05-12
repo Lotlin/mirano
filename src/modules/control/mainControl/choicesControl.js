@@ -1,13 +1,23 @@
 import {
-  toggleChoiceBox, adjustElementPositon, hideChoiceBox, isClickOnElem,
-  isChoiseBoxShown, filterSelectRotateArrowBg,
-  filterSelectReturnToNormalPosArrowBg,
+  toggleChoiceBox, adjustElementPositon, hideChoiceBox, isChoiseBoxShown,
+  isClickOnThisChoicesBox, choiceBtnRotateArrowBg,
+  choiceBtnReturnToNormalPosArrowBg,
 } from '@/modules/util';
 import {
-  allChoicesBtns, allChoicesBoxes, typeChoices, filterButtons,
+  allChoicesBtns, allChoicesBoxes, typeChoices, allChoicesButtons,
 } from '@/modules/getElements';
 import {store} from '@/modules/components/Store';
 import {renderCategories} from '@/modules/render/renderCategories';
+
+const choiceActivate = (choiceBox, choiceBtn) => {
+  adjustElementPositon(choiceBox);
+  choiceBtnRotateArrowBg(choiceBtn);
+};
+
+const choiceDeactivate = (choiceBox, choiceBtn) => {
+  hideChoiceBox(choiceBox);
+  choiceBtnReturnToNormalPosArrowBg(choiceBtn);
+};
 
 export const choicesControl = () => {
   allChoicesBtns.forEach(btn => {
@@ -15,11 +25,9 @@ export const choicesControl = () => {
 
     btn.addEventListener('click', e => {
       for (let i = 0; i < btnsAmount; i++) {
-        const hideNotClickedChoiceBox = ({target}) => {
-          if (!isClickOnElem(target, '.choices')) {
-            console.log(target);
-            hideChoiceBox(allChoicesBoxes[i]);
-            filterSelectReturnToNormalPosArrowBg(filterButtons[i]);
+        const hideNotClickedChoicesBox = ({target}) => {
+          if (!isClickOnThisChoicesBox(target)) {
+            choiceDeactivate(allChoicesBoxes[i], allChoicesButtons[i]);
           }
         };
 
@@ -27,16 +35,14 @@ export const choicesControl = () => {
           toggleChoiceBox(allChoicesBoxes[i]);
 
           if (isChoiseBoxShown(allChoicesBoxes[i])) {
-            adjustElementPositon(allChoicesBoxes[i]);
-            document.addEventListener('click', hideNotClickedChoiceBox);
-            filterSelectRotateArrowBg(filterButtons[i]);
+            choiceActivate(allChoicesBoxes[i], allChoicesButtons[i]);
+            document.addEventListener('click', hideNotClickedChoicesBox);
           } else {
-            filterSelectReturnToNormalPosArrowBg(filterButtons[i]);
-            document.removeEventListener('click', hideNotClickedChoiceBox);
+            choiceBtnReturnToNormalPosArrowBg(allChoicesButtons[i]);
+            document.removeEventListener('click', hideNotClickedChoicesBox);
           }
         } else {
-          hideChoiceBox(allChoicesBoxes[i]);
-          filterSelectReturnToNormalPosArrowBg(filterButtons[i]);
+          choiceDeactivate(allChoicesBoxes[i], allChoicesButtons[i]);
         }
       }
     });
