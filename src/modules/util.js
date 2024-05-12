@@ -83,3 +83,7 @@ export const debounce = (fn, msec = 100) => {
   };
 };
 
+export const cleanInputValue = (input) => {
+  input.value = '';
+};
+

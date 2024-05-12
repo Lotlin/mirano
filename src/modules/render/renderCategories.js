@@ -2,7 +2,7 @@ import {Category} from '../Category.jsx';
 import {store} from '../Store.js';
 import {filterCategoryList} from '../getElements.js';
 
-// todo render arrow
+// todo turn the arrow
 
 export const renderCategories = async () => {
   const updateCategoriList = () => {

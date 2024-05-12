@@ -1,61 +1,45 @@
 import {fetchProducts} from '../api';
 import {filterForm} from '../getElements';
+import {renderGoosTitle} from '../render/renderProducts.js';
+import {cleanInputValue} from '../util.js';
 
 // toDo filter bouquetType
+const applyFiltres = (form) => {
+  const formData = new FormData(form);
 
-const filterType = choosenType => {
-  fetchProducts({type: choosenType});
+  const type = formData.get('type');
+  const minPrice = formData.get('minPrice');
+  const maxPrice = formData.get('maxPrice');
+
+  const filterParams = {};
+
+  if (type) {
+    filterParams.type = type;
+  }
+
+  if (minPrice) {
+    filterParams.minPrice = minPrice;
+  }
+
+  if (maxPrice) {
+    filterParams.maxPrice = maxPrice;
+  }
+
+  fetchProducts(filterParams);
 };
-
-const filterMinPrice = (choosenType, chosenMinPrice) => {
-  fetchProducts({type: choosenType, minPrice: chosenMinPrice});
-};
-
-const filterMaxPrice = (choosenType, chosenMaxPrice) => {
-  fetchProducts({type: choosenType, maxPrice: chosenMaxPrice});
-};
-
-const filterMinPriceMaxPrice =
-  (choosenType, chosenMinPrice, chosenMaxPrice) => {
-    fetchProducts({
-      type: choosenType,
-      minPrice: chosenMinPrice,
-      maxPrice: chosenMaxPrice,
-    });
-  };
 
 export const filterProducts = () => {
-  filterType(filterForm.type.value);
+  applyFiltres(filterForm);
 
-  filterForm.addEventListener('change', e => {
-    const target = e.target;
-
+  filterForm.addEventListener('change', ({target}) => {
     if (target.name === 'type') {
-      filterType(filterForm.type.value);
+      renderGoosTitle(target.labels[0].textContent);
+      cleanInputValue(filterForm.minPrice);
+      cleanInputValue(filterForm.maxPrice);
+      applyFiltres(filterForm);
+      return;
     }
 
-    if (target.name === 'minPrice') {
-      if (!filterForm.maxPrice.value) {
-        filterMinPrice(filterForm.type.value, filterForm.minPrice.value);
-      } else {
-        filterMinPriceMaxPrice(
-            filterForm.type.value,
-            filterForm.minPrice.value,
-            filterForm.maxPrice.value,
-        );
-      }
-    }
-
-    if (target.name === 'maxPrice') {
-      if (!filterForm.minPrice.value) {
-        filterMaxPrice(filterForm.type.value, filterForm.maxPrice.value);
-      } else {
-        filterMinPriceMaxPrice(
-            filterForm.type.value,
-            filterForm.minPrice.value,
-            filterForm.maxPrice.value,
-        );
-      }
-    }
+    applyFiltres(filterForm);
   });
 };

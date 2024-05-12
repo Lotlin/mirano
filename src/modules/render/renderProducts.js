@@ -1,8 +1,6 @@
-import {goodsList} from '../getElements';
+import {goodsList, goodsTitle} from '../getElements';
 import {ProductCard} from '../ProductCard';
 import {store} from '../Store';
-
-// todo render Title
 
 export const renderProducts = async () => {
   const updateList = () => {
@@ -20,4 +18,8 @@ export const renderProducts = async () => {
   store.subscribe(updateList);
 
   updateList();
+};
+
+export const renderGoosTitle = (title) => {
+  goodsTitle.textContent = title;
 };
