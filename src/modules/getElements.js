@@ -1,6 +1,7 @@
 export const body = document.body;
 
 export const header = body.querySelector('.header');
+export const headerForm = header.querySelector('.header__form');
 
 export const typeChoices = body.querySelector('.filter__choices--type');
 export const allChoicesBtns = body.querySelectorAll('.choices__btn');

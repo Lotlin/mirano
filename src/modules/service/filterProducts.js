@@ -4,6 +4,7 @@ import {renderGoosTitle} from '../render/renderProducts.js';
 import {cleanInputValue} from '../util.js';
 
 // toDo filter bouquetType
+// toDO fix goodType disappearance
 const applyFiltres = (form) => {
   const formData = new FormData(form);
 
