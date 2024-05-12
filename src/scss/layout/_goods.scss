@@ -46,4 +46,11 @@
       column-gap: 12px;
     }
   }
+
+  &__no-product {
+    grid-column: 1 / -1;
+    color: $green;
+    font-size: 24px;
+    text-align: center;
+  }
 }
