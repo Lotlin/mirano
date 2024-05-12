@@ -1,7 +1,8 @@
 import {fetchProducts} from '@/modules/components/API';
-import {filterForm} from '@/modules/getElements';
+import {filterForm, goodsSection} from '@/modules/getElements';
 import {renderGoodsTitle} from '@/modules/render/renderProducts';
 import {cleanInputValue} from '@/modules/util';
+import {callbackWithPreload} from '@/modules/service/callbackWithPreload';
 
 // toDo filter bouquetType
 // toDO fix goodType disappearance
@@ -26,7 +27,7 @@ const applyFiltres = (form) => {
     filterParams.maxPrice = maxPrice;
   }
 
-  fetchProducts(filterParams);
+  callbackWithPreload(goodsSection, fetchProducts, filterParams);
 };
 
 export const filterProducts = () => {

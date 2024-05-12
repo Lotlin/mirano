@@ -87,3 +87,8 @@ export const cleanInputValue = (input) => {
   input.value = '';
 };
 
+export const removeElem = elem => {
+  elem.style.display = 'none';
+  elem.remove();
+};
+

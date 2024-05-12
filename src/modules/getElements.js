@@ -11,8 +11,9 @@ export const cart = body.querySelector('.cart');
 export const cartOpenBtn = body.querySelector('.header__cart-btn');
 export const cartCloseBtn = cart.querySelector('.cart__close-btn');
 
-export const goodsTitle = body.querySelector('.goods__title');
-export const goodsList = body.querySelector('.goods__list');
+export const goodsSection = body.querySelector('.goods');
+export const goodsTitle = goodsSection.querySelector('.goods__title');
+export const goodsList = goodsSection.querySelector('.goods__list');
 
 export const filterForm = body.querySelector('.filter__form');
 export const filterCategoryList =

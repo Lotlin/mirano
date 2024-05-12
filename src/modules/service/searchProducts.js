@@ -1,6 +1,7 @@
 import {fetchProducts} from '@/modules/components/API';
-import {headerForm} from '@/modules/getElements';
+import {headerForm, goodsSection} from '@/modules/getElements';
 import {renderGoodsTitle} from '@/modules/render/renderProducts';
+import {callbackWithPreload} from '@/modules/service/callbackWithPreload';
 
 export const searchProducts = () => {
   headerForm.addEventListener('submit', e => {
@@ -12,7 +13,7 @@ export const searchProducts = () => {
 
     if (searchQuery) {
       renderGoodsTitle('Результат поиска');
-      fetchProducts({search: searchQuery});
+      callbackWithPreload(goodsSection, fetchProducts, {search: searchQuery});
     }
   });
 };
