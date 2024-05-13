@@ -9,6 +9,7 @@
 @use './layout/subscribe';
 @use './layout/goods';
 @use './layout/footer';
+@use './layout/order';
 
 @use './components/search-form';
 @use './components/choices';
@@ -16,5 +17,6 @@
 @use './components/card';
 @use './components/cart';
 @use './components/preload';
+@use './components/order-form';
 
 @import 'normalize.css';

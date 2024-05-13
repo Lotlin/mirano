@@ -1,0 +1,41 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/media' as *;
+
+.order {
+  &__overlay {
+    padding-top: 40px;
+    position: fixed;
+    display:  block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 30; 
+    cursor: pointer; 
+  }
+
+  &__container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 40; 
+    @include block-width(624);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 60px 32px;
+    background-color: $white;
+    border-radius: 32px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.3;
+    text-align: center;
+  }
+}

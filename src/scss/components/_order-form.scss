@@ -1,0 +1,200 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/media' as *;
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    grid-template-areas: 
+    "legend legend"
+    "input1 input2";
+    border: none;
+
+    &--address {
+      grid-template-columns: 274px repeat(2, 1fr);
+      grid-template-areas: 
+      "legend legend legend"
+      "input1 input2 input3";
+    }
+    
+    &--delivery-payment {
+      display: grid;
+      grid-template-columns: 135px 190px 1fr;
+      grid-template-areas: 
+      "checkbox checkbox ."
+      "date time .";
+    }
+  }
+
+  &__legend {
+    grid-area: legend;
+    font-weight: 400;
+  }
+
+  &__label {
+    &--checkbox {
+      grid-area: checkbox;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  &__input {
+    @include block-width(274);
+    height: 40px;
+    padding: 9px 16px 8px 16px;
+    background: $bg;
+    border: none;
+    border-radius: 8px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.3;
+      color: $dark;
+      opacity: 0.3;
+    }
+
+    &--name {
+      grid-area: input1;
+    }
+
+    &--phone {
+      grid-area: input2;
+    }
+
+    &--street {
+      grid-area: input1;
+    }
+
+    &--building {
+      grid-area: input2;
+    }
+
+    &--apartment {
+      grid-area: input3;
+    }
+  }
+
+  &__checkbox {
+    display: block;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid $orange;
+      background-color: $bg;
+      border-radius: 50%;
+    }
+
+    &::after {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 4px;
+      transform: translateY(-50%);
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: $orange;
+      border-radius: 50%;
+    }
+
+    &:checked {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__payment-span {
+    padding-left: 28px;
+  }
+
+  &__delivery {
+    grid-area: date;
+    align-self: center;
+  }
+
+  &__delivery-date {
+    
+  }
+
+  &__delivery-time {
+    position: relative;
+    grid-area: time;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 9px 16px 8px 16px;
+    width: 190px;
+    height: 40px;
+    cursor: pointer;
+
+    background: $bg url('/img/arrow-down.svg') no-repeat;
+    background-position-x: 166px;
+    background-position-y: 19px;
+    color: $dark;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:focus-visible {
+      outline-color: $orange;
+    }
+
+    &--active {
+      background: $bg url('/img/arrow-up.svg') no-repeat;
+      background-position-x: 166px;
+      background-position-y: 17px;
+    }
+  }
+
+  &__delivery-option {
+    &:checked {
+      color: $orange;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__total-price {
+  }
+
+  &__submit {
+    color: $white;
+    background: $light-orange;
+    border-radius: 32px;
+    padding: 9px 16px 8px 16px;
+    width: 274px;
+    height: 40px;
+  }
+}
