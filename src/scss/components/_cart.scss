@@ -24,7 +24,8 @@
   }
 
   &__wrapper {
-    @include block-width(310);
+    max-width: 100%;
+    width: 310px;
     min-height: 778px;
     padding: 24px 16px;
     display: flex;
@@ -33,8 +34,8 @@
     border-radius: 32px;
 
     @include small {
-      @include block-width(292);
-      min-height: auto;
+      max-width: 292px;
+      min-height: 350px;
       height: auto;
     }
   }

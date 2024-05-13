@@ -1,4 +1,7 @@
 import {API_URL} from '@/modules/components/API';
+import {cartStore} from '@/modules/components/Store';
+
+// toDo время доставки
 
 export const ProductCard = (product) => (
   <li class="goods__item card">
@@ -20,7 +23,10 @@ export const ProductCard = (product) => (
         }}
         onMouseLeave = {(e) => {
           e.target.innerHTML = `${product.price}&nbsp;₽`;
-        }}>
+        }}
+        onClick={() => {cartStore.addProductCart(product.id)
+        }}
+        >
         {product.price}&nbsp;₽
       </button>
     </div>

@@ -6,7 +6,7 @@ import {
 import {
   allChoicesBtns, allChoicesBoxes, typeChoices, allChoicesButtons,
 } from '@/modules/getElements';
-import {store} from '@/modules/components/Store';
+import {productStore} from '@/modules/components/Store';
 import {renderCategories} from '@/modules/render/renderCategories';
 
 const choiceActivate = (choiceBox, choiceBtn) => {
@@ -50,7 +50,7 @@ export const choicesControl = () => {
 };
 
 export const controlTypeChoicesVisibility = () => {
-  const category = store.getCategories();
+  const category = productStore.getCategories();
 
   if (category.size) {
     typeChoices.style.display = '';

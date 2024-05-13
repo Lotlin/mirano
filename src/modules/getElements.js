@@ -20,3 +20,6 @@ export const goodsList = goodsSection.querySelector('.goods__list');
 export const filterForm = body.querySelector('.filter__form');
 export const filterCategoryList =
   filterForm.querySelector('.filter__type-list');
+
+export const cartList = body.querySelector('.cart__list');
+export const cartTotalPrice = body.querySelector('.cart__price--total');

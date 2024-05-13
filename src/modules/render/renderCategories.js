@@ -1,10 +1,10 @@
 import {Category} from '@/modules/components/Category';
-import {store} from '@/modules/components/Store';
+import {productStore} from '@/modules/components/Store';
 import {filterCategoryList} from '@/modules/getElements';
 
 export const renderCategories = async () => {
   const updateCategoriList = () => {
-    const categories = store.getCategories();
+    const categories = productStore.getCategories();
 
     filterCategoryList.innerHTML = '';
 
@@ -15,7 +15,7 @@ export const renderCategories = async () => {
     });
   };
 
-  store.subscribe(updateCategoriList);
+  productStore.subscribe(updateCategoriList);
 
   updateCategoriList();
 };

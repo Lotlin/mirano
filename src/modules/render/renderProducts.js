@@ -1,17 +1,17 @@
 import {goodsList, goodsTitle} from '@/modules/getElements';
 import {ProductCard} from '@/modules/components/ProductCard';
-import {store} from '@/modules/components/Store';
+import {productStore} from '@/modules/components/Store';
+import {renderMessage} from '@/modules/render/renderMessages.js';
 
 export const renderProducts = async () => {
   const updateList = () => {
-    const products = store.getProducts();
+    const products = productStore.getProducts();
 
     goodsList.innerHTML = '';
 
     if (!products.length) {
-      const messageItem = document.createElement('li');
-      messageItem.className = 'goods__no-product';
-      messageItem.textContent = 'Товары не найдены';
+      const messageItem =
+        renderMessage('goods__no-product', 'Товары не найдены');
 
       goodsList.append(messageItem);
 
@@ -25,7 +25,7 @@ export const renderProducts = async () => {
     });
   };
 
-  store.subscribe(updateList);
+  productStore.subscribe(updateList);
 
   updateList();
 };

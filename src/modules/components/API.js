@@ -1,7 +1,10 @@
-import {store} from '@/modules/components/Store';
+import {productStore} from '@/modules/components/Store';
 
 export const API_URL = 'http://localhost:3000';
 const PRODUCTS_URL = 'api/products';
+export const CART_URL = 'api/cart';
+export const CART_POST = 'items';
+export const CART_REGISTER = 'register';
 
 const formatQueryStryng = params => {
   if (!Object.keys(params)) {
@@ -28,7 +31,7 @@ export const fetchProducts = async (params = {}) => {
 
     const products = await response.json();
 
-    store.setProducts(products);
+    productStore.setProducts(products);
   } catch (error) {
     console.error(`Ошибка при получении данных: ${error}`);
 
