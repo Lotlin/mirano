@@ -10,10 +10,7 @@ export const renderProducts = async () => {
     goodsList.innerHTML = '';
 
     if (!products.length) {
-      const messageItem =
-        renderMessage('goods__no-product', 'Товары не найдены');
-
-      goodsList.append(messageItem);
+      renderMessage('goods__no-product', 'Товары не найдены', goodsList);
 
       return;
     }

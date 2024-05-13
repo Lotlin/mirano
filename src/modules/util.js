@@ -86,6 +86,10 @@ export const hideCart = (cart) => {
   cart.classList.remove(`cart--active`);
 };
 
+export const showItemQuantity = (cartOpenBtn, cartStore) => {
+  cartOpenBtn.textContent = cartStore.getCart().length;
+};
+
 export const cleanInputValue = (input) => {
   input.value = '';
 };
