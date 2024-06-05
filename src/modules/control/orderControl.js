@@ -27,8 +27,9 @@ export const orderFormSubmitConrol = (order) => {
     const orderData = getOrderFormData(formELem);
 
     const result = await sendOrder(orderData);
-    console.log('result: ', result.orderId);
+
     const orderSuccessMessage = OrderSuccessMessage(result.orderId);
+
     order.textContent = '';
     order.append(orderSuccessMessage);
     cartStore.clearCart();
