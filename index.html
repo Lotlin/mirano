@@ -91,7 +91,7 @@
               </div>
                 
               <div class="filter__choices choices">
-                <button class="filter__select filter__choices--type choices__btn" type="button">Тип товара</button>
+                <button class="filter__select filter__choices-type-btn choices__btn" type="button">Тип товара</button>
   
                 <div class="choices__box filter__choices-box filter__choices-box--type">
                   <ul class="filter__type-list">
@@ -148,7 +148,7 @@
               <ul class="cart__list"></ul>
 
               <div class="cart__footer">
-                <button class="cart__order-btn" type="submit">Оформить</button>
+                <button class="cart__order-btn" type="submit" disabled>Оформить</button>
                 <p class="cart__price cart__price--total">0&nbsp;₽</p>
               </div>
             </div>
@@ -171,62 +171,6 @@
         </div>
       </section>
     </div>
-
-    <section class="order">
-      <div class="order__container">
-        <h2 class="order__title">Оформить заказ</h2>
-        <form class="order__form order-form" action="#">
-          <fieldset class="order-form__fieldset">
-            <legend class="order-form__legend">Данные заказчика</legend>
-            <label class="order-form__label" for="customer-name"></label>
-            <input class="order-form__input order-form__input--name" type="text" id="customer-name" placeholder="Имя">
-
-            <label class="order-form__label" for="customer-phone"></label>
-            <input class="order-form__input order-form__input--phone" type="tel" id="customer-phone" placeholder="Телефон">
-          </fieldset>
-
-          <fieldset class="order-form__fieldset">
-            <legend class="order-form__legend">Данные получателя</legend>
-            <label class="order-form__label" for="receiver-name"></label>
-            <input class="order-form__input order-form__input--name" type="text" id="receiver-name" placeholder="Имя">
-
-            <label class="order-form__label" for="receiver-phone"></label>
-            <input class="order-form__input order-form__input--phone" type="tel" id="receiver-phone" placeholder="Телефон">
-          </fieldset>
-
-          <fieldset class="order-form__fieldset order-form__fieldset--address">
-            <legend class="order-form__legend">Адрес</legend>
-            <label class="order-form__label" for="street"></label>
-            <input class="order-form__input order-form__input--street" type="text" id="street" placeholder="Улица">
-
-            <label class="order-form__label" for="street"></label>
-            <input class="order-form__input order-form__input--building" type="text" id="building" placeholder="Дом">
-
-            <label class="order-form__label" for="street"></label>
-            <input class="order-form__input order-form__input--apartment" type="text" id="apartment" placeholder="Квартира">
-          </fieldset>
-
-          <fieldset class="order-form__fieldset order-form__fieldset--delivery-payment">
-            <label class="order-form__label order-form__label--checkbox" for="onlinePayment">
-              <input class="order-form__checkbox" type="checkbox" id="onlinePayment">
-              <span class="order-form__payment-span">Оплата онлайн</span>
-            </label>
-            <p class="order-form__delivery">Доставка <span class="order-form__delivery-date">10.05</span></p>
-            <select class="order-form__delivery-time" name="deliveryTime" id="deliveryTime">
-              <option class="order-form__delivery-option" value="morning">с 9:00 до 12:00</option>
-              <option value="afternoon">с 12:00 до 16:00</option>
-              <option value="evening">с 16:00 до 18:00</option>
-              <option value="night">с 18:00 до 22:00</option>
-            </select>
-          </fieldset>
-          <div class="order-form__footer">
-            <p class="order-form__total-price">9000&nbsp;₽</p>
-            <button class="order-form__submit" type="submit">Заказать</button>
-          </div>
-        </form>
-        </div>
-      <div class="order__overlay"></div>
-    </section>
 
     <footer class="footer">
       <div class="container footer__container">

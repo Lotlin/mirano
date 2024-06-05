@@ -110,3 +110,17 @@ export const choiceBtnRotateArrowBg = (elem) => {
 export const choiceBtnReturnToNormalPosArrowBg = (elem) => {
   elem.classList.remove('filter__select--bg-rotate');
 };
+
+const addZeroToSingleDigit = num => (num < 10 ? `0${num}` : num);
+
+export const getDeliveryDate = (deliveryTimeInDays = 1) => {
+  const date = new Date();
+  date.setDate(date.getDate() + 1);
+
+  const deliveryDay = addZeroToSingleDigit(date.getDate());
+  const deliveryMonth = addZeroToSingleDigit((date.getMonth() + 1));
+
+  const deliveryDate = `${deliveryDay}.${deliveryMonth}`;
+
+  return deliveryDate;
+};

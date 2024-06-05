@@ -2,8 +2,7 @@ export const body = document.body;
 
 export const header = body.querySelector('.header');
 export const headerForm = header.querySelector('.header__form');
-
-export const typeChoices = body.querySelector('.filter__choices--type');
+export const typeChoices = body.querySelector('.filter__choices-type-btn');
 export const allChoicesBtns = body.querySelectorAll('.choices__btn');
 export const allChoicesBoxes = body.querySelectorAll('.choices__box');
 export const allChoicesButtons = body.querySelectorAll('.choices__btn');
@@ -21,5 +20,12 @@ export const filterForm = body.querySelector('.filter__form');
 export const filterCategoryList =
   filterForm.querySelector('.filter__type-list');
 
-export const cartList = body.querySelector('.cart__list');
-export const cartTotalPrice = body.querySelector('.cart__price--total');
+export const cartElem = body.querySelector('.cart');
+export const cartList = cartElem.querySelector('.cart__list');
+export const cartTotalPrice = cartElem.querySelector('.cart__price--total');
+export const cartOrderBtn = cartElem.querySelector('.cart__order-btn');
+
+export const getOrderSection = () => document.querySelector('.order');
+export const getOrderDeliveryTimeSelect = () =>
+  document.querySelector('.order-form__delivery-time');
+export const getOrderFormElem = (order) => order.querySelector('.order__form');
