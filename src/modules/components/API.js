@@ -1,7 +1,6 @@
 import {productStore} from '@/modules/components/Store';
 
 export const API_URL = 'https://magnificent-flowery-oak.glitch.me';
-// export const API_URL = 'https://mirano-api-0r1s.onrender.com';
 const PRODUCTS_URL = 'api/products';
 export const CART_URL = 'api/cart';
 export const CART_POST = 'items';
@@ -32,8 +31,7 @@ export const fetchProducts = async (params = {}) => {
     }
 
     const products = await response.json();
-
-    productStore.setProducts(products);
+    return products;
   } catch (error) {
     console.error(`Ошибка при получении данных: ${error}`);
 

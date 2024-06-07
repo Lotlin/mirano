@@ -4,7 +4,10 @@ import {initCart} from '@/modules/init/initCart';
 import {initMainSection} from '@/modules/init/main/initMainSection';
 import {initOrder} from '@/modules/init/initOrder';
 
-// todo обнуление цены в корзине при удалении товаров
+// toDo фильтр цыетов по типу товара
+// toDO при вводе в фильтр пропадает окно (после ввода в первый input)
+// toDO карточка товара время доставки + при оформлении заказа
+// toDO проверить onKeyDown для openSelect
 
 export const init = () => {
   initHeader();

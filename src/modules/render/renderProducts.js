@@ -5,11 +5,11 @@ import {renderMessage} from '@/modules/render/renderMessages.js';
 
 export const renderProducts = async () => {
   const updateList = () => {
-    const products = productStore.getProducts();
+    const products = productStore.products;
 
     goodsList.innerHTML = '';
 
-    if (!products.length) {
+    if (!products.length && !productStore.loading) {
       renderMessage('goods__no-product', 'Товары не найдены', goodsList);
 
       return;

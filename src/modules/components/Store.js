@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 import {
-  API_URL, CART_URL, CART_POST, CART_REGISTER,
-} from '@/modules/components/API.js';
+  API_URL, CART_URL, CART_POST, CART_REGISTER, fetchProducts,
+} from '@/modules/components/API';
 
 class Store {
   constructor() {
@@ -20,10 +20,50 @@ class Store {
 class ProductStore extends Store {
   constructor() {
     super();
-    this.products = [];
+    this._products = [];
     this.categories = new Set();
+    this._loading = false; // toDO
+    this.error = null;
   }
 
+  fetchProducts() {
+    const _self = this;
+    return async (params) => {
+      try {
+        _self.error = null;
+        _self.loading = true;
+        _self.products = await fetchProducts(params);
+        _self.loading = false;
+        _self.notifyObservers();
+      } catch (error) {
+        console.error('error: ', error);
+        _self.error = error;
+        _self.products = [];
+        _self.loading = false;
+        _self.notifyObservers();
+      }
+    };
+  }
+
+  get products() {
+    return this._products;
+  }
+
+  set products(newProducts) {
+    this._products = newProducts;
+    this.updateCategories(newProducts);
+    this.notifyObservers();
+  }
+
+  get loading() {
+    return this._loading;
+  }
+
+  set loading(bool) {
+    this._loading = bool;
+    this.notifyObservers();
+  }
+/*
   getProducts() {
     return this.products;
   }
@@ -33,7 +73,7 @@ class ProductStore extends Store {
     this.updateCategories(newProducts);
     this.notifyObservers();
   }
-
+*/
   getCategories() {
     return this.categories;
   }
