@@ -13,33 +13,37 @@ export const Order = (orderTotalPriceValue) => {
             <legend class="order-form__legend">Данные заказчика</legend>
 
             <label class="order-form__label" for="buyer-name"></label>
-            <input class="order-form__input order-form__input--name" type="text" id="buyer-name" placeholder="Имя" name="buyer-name"  />
+            <input class="order-form__input order-form__input--name" type="text" id="buyer-name" placeholder="Имя" name="buyer-name" required  />
 
             <label class="order-form__label" for="buyer-phone"></label>
-            <input class="order-form__input order-form__input--phone" type="tel" id="buyer-phone" placeholder="Телефон" name="buyer-phone" />
+            <input class="order-form__input order-form__input--phone" type="tel" id="buyer-phone" placeholder="Телефон" name="buyer-phone" 
+              pattern="\+?[0-9\s\-\(\)]+" required 
+            />
           </fieldset>
 
           <fieldset class="order-form__fieldset">
             <legend class="order-form__legend">Данные получателя</legend>
 
             <label class="order-form__label" for="recipient-name"></label>
-            <input class="order-form__input order-form__input--name" type="text" id="recipient-name" placeholder="Имя" name="recipient-name"/>
+            <input class="order-form__input order-form__input--name" type="text" id="recipient-name" placeholder="Имя" name="recipient-name" required />
 
             <label class="order-form__label" for="recipient-phone"></label>
-            <input class="order-form__input order-form__input--phone" type="tel" id="recipient-phone" placeholder="Телефон" name="recipient-phone" />
+            <input class="order-form__input order-form__input--phone" type="tel" id="recipient-phone" placeholder="Телефон" name="recipient-phone"
+              pattern="\+?[0-9\s\-\(\)]+" required
+            />
           </fieldset>
 
           <fieldset class="order-form__fieldset order-form__fieldset--address">
             <legend class="order-form__legend">Адрес</legend>
 
             <label class="order-form__label" for="street"></label>
-            <input class="order-form__input order-form__input--street" type="text" id="street" placeholder="Улица" name="street"/>
+            <input class="order-form__input order-form__input--street" type="text" id="street" placeholder="Улица" name="street" required />
 
             <label class="order-form__label" for="building"></label>
-            <input class="order-form__input order-form__input--building" type="text" id="building" placeholder="Дом" name="building"/>
+            <input class="order-form__input order-form__input--building" type="text" id="building" placeholder="Дом" name="building" required />
 
             <label class="order-form__label" for="apartment"></label>
-            <input class="order-form__input order-form__input--apartment" type="text" id="apartment" placeholder="Квартира" name="apartment"/>
+            <input class="order-form__input order-form__input--apartment" type="text" id="apartment" placeholder="Квартира" name="apartment" required />
           </fieldset>
 
           <fieldset class="order-form__fieldset order-form__fieldset--delivery-payment">
