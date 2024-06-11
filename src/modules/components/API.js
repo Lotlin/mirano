@@ -1,5 +1,3 @@
-import {productStore} from '@/modules/components/Store';
-
 export const API_URL = 'https://magnificent-flowery-oak.glitch.me';
 const PRODUCTS_URL = 'api/products';
 export const CART_URL = 'api/cart';
@@ -8,7 +6,7 @@ export const CART_REGISTER = 'register';
 export const ORDER_URL = 'api/orders';
 
 const formatQueryStryng = params => {
-  if (!Object.keys(params)) {
+  if (!Object.keys(params).length) {
     return '';
   }
 

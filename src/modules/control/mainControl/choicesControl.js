@@ -1,7 +1,7 @@
 import {
-  toggleChoiceBox, adjustElementPositon, hideChoiceBox, isChoiseBoxShown,
+  toggleChoiceBox, adjustElementPosition, hideChoiceBox, isChoiseBoxShown,
   isClickOnThisChoicesBox, choiceBtnRotateArrowBg,
-  choiceBtnReturnToNormalPosArrowBg,
+  choiceBtnReturnToNormalPosArrowBg, debounce,
 } from '@/modules/util';
 import {
   allChoicesBtns, allChoicesBoxes, typeChoices, allChoicesButtons,
@@ -10,7 +10,7 @@ import {productStore} from '@/modules/components/Store';
 import {renderCategories} from '@/modules/render/renderCategories';
 
 const choiceActivate = (choiceBox, choiceBtn) => {
-  adjustElementPositon(choiceBox);
+  adjustElementPosition(choiceBox);
   choiceBtnRotateArrowBg(choiceBtn);
 };
 
@@ -44,6 +44,12 @@ export const choicesControl = () => {
         } else {
           choiceDeactivate(allChoicesBoxes[i], allChoicesButtons[i]);
         }
+
+        window.addEventListener('resize', debounce(() => {
+          adjustElementPosition(allChoicesBoxes[i]);
+        }));
+
+        productStore.subscribe(() => adjustElementPosition(allChoicesBoxes[i]));
       }
     });
   });

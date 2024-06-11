@@ -22,7 +22,7 @@ class ProductStore extends Store {
     super();
     this._products = [];
     this.categories = new Set();
-    this._loading = false; // toDO
+    this._loading = false;
     this.error = null;
   }
 
@@ -63,17 +63,7 @@ class ProductStore extends Store {
     this._loading = bool;
     this.notifyObservers();
   }
-/*
-  getProducts() {
-    return this.products;
-  }
 
-  setProducts(newProducts) {
-    this.products = newProducts;
-    this.updateCategories(newProducts);
-    this.notifyObservers();
-  }
-*/
   getCategories() {
     return this.categories;
   }

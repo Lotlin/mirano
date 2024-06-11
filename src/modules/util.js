@@ -4,7 +4,7 @@ export const debounce = (fn, msec = 100) => {
   let idTimeout;
 
   return (...args) => {
-    clearInterval(idTimeout);
+    clearTimeout(idTimeout);
     idTimeout = setTimeout(() => {
       fn(...args);
     }, msec);
@@ -46,7 +46,7 @@ const isElemDroppingOutLeft = (elemPosition) => elemPosition.left < 0;
 const isElemDroppingOutRight = (elemPosition, viewportWindow) =>
   elemPosition.right > viewportWindow;
 
-export const adjustElementPositon = (elem, count = 0) => {
+export const adjustElementPosition = (elem, count = 0) => {
   const currentElemPosition = elem.getBoundingClientRect();
   const viewportWindow = window.innerWidth;
 
@@ -68,7 +68,7 @@ export const adjustElementPositon = (elem, count = 0) => {
   if ((isElemDroppingOutLeft(newElemPosition) ||
     isElemDroppingOutRight(newElemPosition, viewportWindow)) && count < 3) {
     count++;
-    adjustElementPositon(elem, count);
+    adjustElementPosition(elem, count);
   }
 };
 
@@ -124,3 +124,6 @@ export const getDeliveryDate = (deliveryTimeInDays = 1) => {
 
   return deliveryDate;
 };
+
+export const isClickedOnBouquetTypeBtn = (target) =>
+  target.closest('.filter__type-button');

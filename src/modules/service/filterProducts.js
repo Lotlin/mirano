@@ -3,10 +3,9 @@ import {renderGoodsTitle} from '@/modules/render/renderProducts';
 import {cleanInputValue} from '@/modules/util';
 import {callbackWithPreload} from '@/modules/service/callbackWithPreload';
 import {productStore} from '../components/Store.js';
+import {isClickedOnBouquetTypeBtn} from '../util.js';
 
-// toDo filter bouquetType
-// toDO fix goodType disappearance
-const applyFiltres = (form) => {
+const applyFiltres = (form, category) => {
   const formData = new FormData(form);
 
   const type = formData.get('type');
@@ -27,6 +26,10 @@ const applyFiltres = (form) => {
     filterParams.maxPrice = maxPrice;
   }
 
+  if (category) {
+    filterParams.category = category;
+  }
+
   callbackWithPreload(
       goodsSection, productStore.fetchProducts(), filterParams,
   );
@@ -45,5 +48,11 @@ export const filterProducts = () => {
     }
 
     applyFiltres(filterForm);
+  });
+
+  filterForm.addEventListener('click', ({target}) => {
+    if (isClickedOnBouquetTypeBtn(target)) {
+      applyFiltres(filterForm, target.textContent);
+    }
   });
 };
